@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue"; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+.circles:after, .scrobbler-body:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.circles {
+  float: left; }
+  .circles li {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: #d8190b;
+    background-image: -moz-linear-gradient(#d8190b, #a30402);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d8190b), to(#a30402));
+    background-image: -webkit-linear-gradient(#d8190b, #a30402);
+    background-image: -o-linear-gradient(#d8190b, #a30402);
+    background-image: linear-gradient(#d8190b, #a30402);
+    border: 2px solid rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 2px rgba(255, 255, 255, 0.35), 0 2px #ff6e62;
+    margin-right: 15px;
+    display: inline-block;
+    vertical-align: middle; }
+
+.volume {
+  position: relative;
+  float: right;
+  height: 20px;
+  width: 100px;
+  background-color: #b90e06;
+  background-image: -moz-linear-gradient(#b90e06, #c60f07);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b90e06), to(#c60f07));
+  background-image: -webkit-linear-gradient(#b90e06, #c60f07);
+  background-image: -o-linear-gradient(#b90e06, #c60f07);
+  background-image: linear-gradient(#b90e06, #c60f07);
+  border-radius: 15px;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25), 0 2px rgba(255, 255, 255, 0.25); }
+  .volume:before {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 23px;
+    left: -35px;
+    content: "";
+    background: url("../images/volume.png") no-repeat; }
+  .volume .volume-inner {
+    position: relative;
+    overflow: hidden;
+    height: inherit;
+    width: 80px;
+    border-radius: 16px;
+    border: 2px solid black;
+    background: #121313;
+    cursor: pointer; }
+    .volume .volume-inner:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 50%;
+      height: 100%;
+      width: 100%;
+      border-radius: 16px;
+      background: #2a2b2b; }
+  .volume .volume-knob {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    content: "";
+    top: 0;
+    left: 60px;
+    margin-top: -3px;
+    height: 28px;
+    width: 28px;
+    background: url("../images/knob.png") no-repeat; }
+
+.logo {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  right: 0;
+  height: 33px;
+  background: url("../images/logo-min.png") top center no-repeat; }
+
+.album-art {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  float: left; }
+  .album-art:after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 2px rgba(255, 255, 255, 0.75), 0 4px 10px black;
+    border-radius: 7px; }
+
+.scrobbler__min {
+  margin: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); }
+
+.scrobbler-header {
+  position: relative;
+  height: 80px;
+  margin-top: 2px;
+  width: 100%;
+  padding: 29px 30px;
+  background-color: #ff2711;
+  background-image: -moz-linear-gradient(#ff2711, #de1409);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff2711), to(#de1409));
+  background-image: -webkit-linear-gradient(#ff2711, #de1409);
+  background-image: -o-linear-gradient(#ff2711, #de1409);
+  background-image: linear-gradient(#ff2711, #de1409);
+  border-radius: 8px 8px 0 0;
+  box-shadow: inset 0 2px rgba(255, 255, 255, 0.35), 0 6px 12px rgba(0, 0, 0, 0.5); }
+
+.scrobbler-body {
+  padding: 30px;
+  background: #2a2b2b;
+  font-size: 24px; }
+
+.track-details {
+  float: left;
+  margin-left: 35px;
+  color: #a2a7b0;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.75); }
+
+.track-title, .track-artist span, .album-title, .album-release {
+  color: white; }
+
+.track-title {
+  font-size: 32px;
+  margin: 0 0 15px; }
+  .track-title time {
+    color: #a2a7b0;
+    font-weight: normal; }
+    .track-title time:before {
+      content: "- "; }
+
+.track-artist {
+  font-size: 22px; }
