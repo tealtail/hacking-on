@@ -1,26 +1,18 @@
+@import 'reset'
+@import 'mixins'
+
 *
   box-sizing: border-box
 
 body
-  font-family: "Helvetica Neue"
-
-ul
-  margin: 0
-  padding: 0
+  font-family: sans-serif
+  line-height: 1
 
 %group
   &:after
     content: ''
     display: table
     clear: both
-
-=gradient($from, $to)
-  background-color: $from
-  background-image: -moz-linear-gradient($from, $to)
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to))
-  background-image: -webkit-linear-gradient($from, $to)
-  background-image: -o-linear-gradient($from, $to)
-  background-image: linear-gradient($from, $to)
 
 .circles
   @extend %group
@@ -29,6 +21,8 @@ ul
   li
     height: 24px
     width: 24px
+    cursor: pointer
+    user-select: none
     border-radius: 50%
     +gradient(#d8190b, #a30402)
     border: 2px solid rgba(0,0,0,.35)
@@ -42,9 +36,10 @@ ul
   float: right
   height: 20px
   width: 100px
-  +gradient(#b90e06,#c60f07)
-  border-radius: 15px
+  +gradient(#a80c05,#bb0d06)
+  border-radius: 10px
   box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 2px rgba(255,255,255,.25)
+  user-select: none
 
   &:before
     position: absolute
@@ -60,9 +55,10 @@ ul
     overflow: hidden
     height: inherit
     width: 80px
-    border-radius: 16px
+    border-radius: 10px
     border: 2px solid #000
     background: #121313
+    user-select: none
     cursor: pointer
 
     &:before
@@ -75,11 +71,11 @@ ul
       border-radius: 16px
       background: #2a2b2b
 
-  .volume-knob
+  .volume-handle
     position: absolute
     display: block
+    user-select: none
     cursor: pointer
-    content: ''
     top: 0
     left: 60px
     margin-top: -3px
@@ -113,7 +109,8 @@ ul
     border-radius: 7px
 
 .scrobbler__min
-  margin: 60px
+  width: 700px
+  margin: 60px auto
   box-shadow: 0 10px 30px rgba(0,0,0,.25)
 
 .scrobbler-header
@@ -138,20 +135,40 @@ ul
   color: #a2a7b0
   text-shadow: 0 2px 3px rgba(0,0,0,.75)
 
-.track-title,.track-artist span, .album-title,.album-release
+.track-title,.track-artist a, .album-title,.album-release
   color: white
 
 .track-title
   font-size: 32px
-  margin: 0 0 15px
+  font-weight: bold
+  margin: 5px 0 16px
 
   time
     color: #a2a7b0
     font-weight: normal
+    font-size: 26px
 
     &:before
       content: '- '
 
 .track-artist
+  position: relative
+  display: block
+  line-height: 30px
+  font-weight: bold
   font-size: 22px
+  text-decoration: none
 
+  &:after
+    content: ''
+    position: absolute
+    display: inline-block
+    margin-left: 10px
+    background: url('../images/plus.png') no-repeat
+    width: 30px
+    height: 29px
+
+.album-title
+  margin: 40px 0 20px
+  font-size: 30px
+  font-weight: bold
