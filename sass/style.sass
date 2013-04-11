@@ -8,6 +8,9 @@ body
   font-family: sans-serif
   line-height: 1
 
+a
+  text-decoration: none
+
 %group
   &:after
     content: ''
@@ -50,11 +53,11 @@ body
     content: ''
     background: url('../images/volume.png') no-repeat
 
-  .volume-inner
+  .volume-level
     position: relative
     overflow: hidden
-    height: inherit
-    width: 80px
+    height: 100%
+    width: 60%
     border-radius: 10px
     border: 2px solid #000
     background: #121313
@@ -77,7 +80,8 @@ body
     user-select: none
     cursor: pointer
     top: 0
-    left: 60px
+    left: 0
+    margin-left: -14px
     margin-top: -3px
     height: 28px
     width: 28px

@@ -46,6 +46,9 @@ body {
   font-family: sans-serif;
   line-height: 1; }
 
+a {
+  text-decoration: none; }
+
 .circles:after, .scrobbler-body:after {
   content: "";
   display: table;
@@ -93,17 +96,17 @@ body {
     left: -35px;
     content: "";
     background: url("../images/volume.png") no-repeat; }
-  .volume .volume-inner {
+  .volume .volume-level {
     position: relative;
     overflow: hidden;
-    height: inherit;
-    width: 80px;
+    height: 100%;
+    width: 60%;
     border-radius: 10px;
     border: 2px solid black;
     background: #121313;
     user-select: none;
     cursor: pointer; }
-    .volume .volume-inner:before {
+    .volume .volume-level:before {
       content: "";
       display: block;
       position: absolute;
@@ -118,7 +121,8 @@ body {
     user-select: none;
     cursor: pointer;
     top: 0;
-    left: 60px;
+    left: 0;
+    margin-left: -14px;
     margin-top: -3px;
     height: 28px;
     width: 28px;
