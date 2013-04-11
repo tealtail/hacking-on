@@ -1,0 +1,95 @@
+.scrobbler-header
+  position: relative
+  height: 80px
+  margin-top: 2px
+  width: 100%
+  padding: 29px 30px
+  +gradient(#ff2711, #de1409)
+  border-radius: 10px 10px 0 0
+  box-shadow: inset 0 2px rgba(255,255,255,.35), 0 6px 12px rgba(0,0,0,.5)
+
+.circles
+  @extend %group
+  float: left
+  +user-select(none)
+
+  li
+    height: 24px
+    width: 24px
+    cursor: pointer
+    +user-select(none)
+    border-radius: 50%
+    +gradient(#d8190b, #a30402)
+    border: 2px solid rgba(0,0,0,.35)
+    box-shadow: inset 0 2px rgba(255,255,255,.35), 0 2px #ff6e62
+    margin-right: 15px
+    display: inline-block
+    vertical-align: middle
+
+.volume
+  float: right
+  position: relative
+  height: 20px
+  width: 100px
+  +user-select(none)
+
+  &:before
+    position: absolute
+    display: block
+    width: 25px
+    height: 23px
+    left: -40px
+    content: ''
+    background: url('../images/volume.png') no-repeat
+
+  .volume-track
+    position: relative
+    height: 100%
+    width: 100%
+    overflow: hidden
+    +gradient(#a80c05,#bb0d06)
+    border-radius: 10px
+    box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 2px rgba(255,255,255,.25)
+    +user-select(none)
+    cursor: pointer
+
+  .volume-level
+    position: absolute
+    height: 100%
+    width: 50px
+    max-width: 100%
+    border-radius: 10px
+    border: 2px solid #000
+    background: #121313
+    overflow: hidden
+    +user-select(none)
+    cursor: pointer
+
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      bottom: 50%
+      height: 100%
+      width: 100%
+      border-radius: 10px
+      background: #2a2b2b
+
+  .volume-handle
+    position: absolute
+    display: block
+    +user-select(none)
+    cursor: pointer
+    top: 0
+    left: 50px
+    +center-slider(28px)
+    margin-top: -3px
+    background: url('../images/knob.png') no-repeat
+
+.logo
+  position: absolute
+  top: 22px
+  left: 0
+  right: 0
+  height: 33px
+  background: url('../images/logo-min.png') top center no-repeat

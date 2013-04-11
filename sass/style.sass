@@ -1,7 +1,7 @@
 @import 'reset'
 @import 'mixins'
-
-*
+@import 'modules/scrobbler-header'
+*, *:after, *:before
   box-sizing: border-box
 
 body
@@ -16,93 +16,6 @@ a
     content: ''
     display: table
     clear: both
-
-.circles
-  @extend %group
-  float: left
-
-  li
-    height: 24px
-    width: 24px
-    cursor: pointer
-    user-select: none
-    border-radius: 50%
-    +gradient(#d8190b, #a30402)
-    border: 2px solid rgba(0,0,0,.35)
-    box-shadow: inset 0 2px rgba(255,255,255,.35), 0 2px #ff6e62
-    margin-right: 15px
-    display: inline-block
-    vertical-align: middle
-
-.volume
-  float: right
-  position: relative
-  height: 20px
-  width: 100px
-  user-select: none
-
-  &:before
-    position: absolute
-    display: block
-    width: 25px
-    height: 23px
-    left: -40px
-    content: ''
-    background: url('../images/volume.png') no-repeat
-
-  .volume-track
-    position: relative
-    height: 100%
-    width: 100%
-    overflow: hidden
-    +gradient(#a80c05,#bb0d06)
-    border-radius: 10px
-    box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 2px rgba(255,255,255,.25)
-    user-select: none
-    cursor: pointer
-
-  .volume-level
-    position: absolute
-    height: 100%
-    width: 0
-    max-width: 100%
-    border-radius: 10px
-    border: 2px solid #000
-    background: #121313
-    overflow: hidden
-    user-select: none
-    cursor: pointer
-
-    &:before
-      content: ''
-      display: block
-      position: absolute
-      bottom: 50%
-      height: 100%
-      width: 100%
-      border-radius: 10px
-      background: #2a2b2b
-
-  .volume-handle
-    position: absolute
-    display: block
-    user-select: none
-    cursor: pointer
-    top: 0
-    left: 0
-    margin-left: -14px
-    margin-top: -3px
-    height: 28px
-    width: 28px
-    background: url('../images/knob.png') no-repeat
-
-.logo
-  position: absolute
-  top: 22px
-  left: 0
-  right: 0
-  height: 33px
-  background: url('../images/logo-min.png') top center no-repeat
 
 .album-art
   position: relative
@@ -127,31 +40,33 @@ a
   border-radius: 10px
   box-shadow: 0 10px 30px rgba(0,0,0,.25)
 
-.scrobbler-header
-  position: relative
-  height: 80px
-  margin-top: 2px
-  width: 100%
-  padding: 29px 30px
-  +gradient(#ff2711, #de1409)
-  border-radius: 10px 10px 0 0
-  box-shadow: inset 0 2px rgba(255,255,255,.35), 0 6px 12px rgba(0,0,0,.5)
-
 .scrobbler-body
   @extend %group
+  position: relative
   padding: 30px
   background: #2a2b2b
   font-size: 24px
-  border-bottom: 1px solid #292a2a
+
+  &:before
+    content: ''
+    position: absolute
+    display: block
+    +gradient(rgba(0,0,0,0),rgba(0,0,0,1))
+    bottom: 1px
+    left: 0
+    right: 0
+    height: 150px
+    opacity: 0.5
 
 .scrobbler-controls
   @extend %group
   height: 80px
   border-radius: 0 0 10px 10px
-  border: 1px solid #fff
+  box-shadow: inset 0 0 0 1px #fff
   +gradient(#fff,#d9d9d9)
 
 .track-details
+  position: relative
   float: left
   margin-left: 35px
   color: #a2a7b0
