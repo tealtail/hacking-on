@@ -11,11 +11,8 @@ $ ->
     pagePos = e.pageX - volumeEl.offset().left
     pagePos = Math.min(volumeEl.outerWidth(), pagePos)
     pagePos = Math.max(0, pagePos)
-    console.log(pagePos)
     if @pagePos != pagePos
       @pagePos = pagePos
-      ratio = pagePos / volumeEl.outerWidth()
-      console.log(ratio)
-      handle.css left: pagePos
-      level.css width: pagePos
+      handle.animate left: pagePos, 200
+      level.animate width: pagePos, 200
     false

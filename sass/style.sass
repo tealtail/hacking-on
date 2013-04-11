@@ -35,13 +35,10 @@ a
     vertical-align: middle
 
 .volume
-  position: relative
   float: right
+  position: relative
   height: 20px
   width: 100px
-  +gradient(#a80c05,#bb0d06)
-  border-radius: 10px
-  box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 2px rgba(255,255,255,.25)
   user-select: none
 
   &:before
@@ -53,14 +50,25 @@ a
     content: ''
     background: url('../images/volume.png') no-repeat
 
-  .volume-level
+  .volume-track
     position: relative
-    overflow: hidden
     height: 100%
-    width: 60%
+    width: 100%
+    overflow: hidden
+    +gradient(#a80c05,#bb0d06)
+    border-radius: 10px
+    box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 2px rgba(255,255,255,.25)
+    user-select: none
+    cursor: pointer
+
+  .volume-level
+    position: absolute
+    height: 100%
+    width: 60px
     border-radius: 10px
     border: 2px solid #000
     background: #121313
+    overflow: hidden
     user-select: none
     cursor: pointer
 
@@ -71,7 +79,7 @@ a
       bottom: 50%
       height: 100%
       width: 100%
-      border-radius: 16px
+      border-radius: 10px
       background: #2a2b2b
 
   .volume-handle
@@ -80,7 +88,7 @@ a
     user-select: none
     cursor: pointer
     top: 0
-    left: 0
+    left: 60px
     margin-left: -14px
     margin-top: -3px
     height: 28px

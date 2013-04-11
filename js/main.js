@@ -8,7 +8,7 @@
     handle = $('.volume-handle');
     this.pagePos = 0;
     return volumeEl.mousedown(function(e) {
-      var pagePos, ratio;
+      var pagePos;
 
       if (e.which !== 1) {
         return;
@@ -17,17 +17,14 @@
       pagePos = e.pageX - volumeEl.offset().left;
       pagePos = Math.min(volumeEl.outerWidth(), pagePos);
       pagePos = Math.max(0, pagePos);
-      console.log(pagePos);
       if (_this.pagePos !== pagePos) {
         _this.pagePos = pagePos;
-        ratio = pagePos / volumeEl.outerWidth();
-        console.log(ratio);
-        handle.css({
+        handle.animate({
           left: pagePos
-        });
-        level.css({
+        }, 200);
+        level.animate({
           width: pagePos
-        });
+        }, 200);
       }
       return false;
     });
