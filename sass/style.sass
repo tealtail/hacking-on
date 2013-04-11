@@ -46,7 +46,7 @@ a
     display: block
     width: 25px
     height: 23px
-    left: -35px
+    left: -40px
     content: ''
     background: url('../images/volume.png') no-repeat
 
@@ -64,7 +64,8 @@ a
   .volume-level
     position: absolute
     height: 100%
-    width: 60px
+    width: 0
+    max-width: 100%
     border-radius: 10px
     border: 2px solid #000
     background: #121313
@@ -88,7 +89,7 @@ a
     user-select: none
     cursor: pointer
     top: 0
-    left: 60px
+    left: 0
     margin-left: -14px
     margin-top: -3px
     height: 28px
@@ -123,6 +124,7 @@ a
 .scrobbler__min
   width: 700px
   margin: 60px auto
+  border-radius: 10px
   box-shadow: 0 10px 30px rgba(0,0,0,.25)
 
 .scrobbler-header
@@ -132,7 +134,7 @@ a
   width: 100%
   padding: 29px 30px
   +gradient(#ff2711, #de1409)
-  border-radius: 8px 8px 0 0
+  border-radius: 10px 10px 0 0
   box-shadow: inset 0 2px rgba(255,255,255,.35), 0 6px 12px rgba(0,0,0,.5)
 
 .scrobbler-body
@@ -140,6 +142,14 @@ a
   padding: 30px
   background: #2a2b2b
   font-size: 24px
+  border-bottom: 1px solid #292a2a
+
+.scrobbler-controls
+  @extend %group
+  height: 80px
+  border-radius: 0 0 10px 10px
+  border: 1px solid #fff
+  +gradient(#fff,#d9d9d9)
 
 .track-details
   float: left
