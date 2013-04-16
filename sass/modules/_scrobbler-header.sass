@@ -1,3 +1,9 @@
+=slider-handle($size)
+  height: $size
+  margin-left: -($size / 2)
+  right: -($size / 2)
+  width: $size
+
 .scrobbler-header
   position: relative
   height: 80px
@@ -82,7 +88,7 @@
     cursor: pointer
     top: 0
     left: 50px
-    +center-slider(28px)
+    +slider-handle(28px)
     margin-top: -3px
     background: url('../images/knob.png') no-repeat
 
