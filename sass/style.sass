@@ -1,6 +1,8 @@
 @import 'reset'
 @import 'mixins'
 @import 'modules/scrobbler-header'
+@import 'modules/scrobbler-control'
+
 *, *:after, *:before
   box-sizing: border-box
 
@@ -58,39 +60,6 @@ a
     height: 150px
     opacity: 0.5
 
-.scrobbler-controls
-  @extend %group
-  height: 80px
-  border-radius: 0 0 10px 10px
-  box-shadow: inset 0 0 0 1px #fff
-  +gradient(#fff,#d9d9d9)
-
-.seeker-track
-  height: 20px
-  width: 500px
-  border-radius: 10px
-  margin: 30px
-  background: rgba(0,0,0,.1)
-  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), inset 0 -1px rgba(0,0,0,.08), inset 0 1px rgba(0,0,0,.04), 0 2px rgba(255,255,255,.65)
-
-  .seeker-fill
-    position: relative
-    overflow: hidden
-    height: 100%
-    width: 300px
-    border: 2px solid #ab1409
-    border-radius: 10px
-    +gradient(#d21007, #a50c05)
-    box-shadow: inset 0 1px 3px rgba(255,255,255, .3), inset 0 -1px 3px rgba(0,0,0,.2)
-
-    &:after
-      position: absolute
-      content: ''
-      width: 100%
-      height: 100%
-      bottom: 50%
-      background: rgba(255,255,255,.15)
-      border-radius: 10px
 .track-details
   position: relative
   float: left

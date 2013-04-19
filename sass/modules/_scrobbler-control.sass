@@ -1,0 +1,70 @@
+.scrobbler-control
+  @extend %group
+  height: 80px
+  padding: 30px 20px
+  border-radius: 0 0 10px 10px
+  box-shadow: inset 0 0 0 1px #fff
+  +gradient(#fff, #d9d9d9)
+
+  > div
+    float: left
+    margin-left: 20px
+
+    &:first-child
+      margin-left: 0
+
+  .control-play
+    height: 44px
+    width: 38px
+    margin-top: -12px
+    background: url(../images/btn_play.png) no-repeat
+
+  .control-skip
+    height: 24px
+    width: 32px
+    margin-top: -1px
+    background: url(../images/btn_skip.png) no-repeat
+
+  .control-love
+    height: 30px
+    width: 30px
+    margin-top: -4px
+    margin-left: 30px
+    background: url(../images/btn_love.png) no-repeat
+
+  .control-nolove
+    height: 34px
+    width: 32px
+    margin-top: -6px
+    background: url(../images/btn_nolove.png) no-repeat
+
+.seeker
+  margin-left: 30px
+  height: 20px
+  width: 430px
+
+.seeker-track
+  height: 100%
+  width: 100%
+  border-radius: 10px
+  background: rgba(0,0,0,.1)
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), inset 0 -1px rgba(0,0,0,.08), inset 0 1px rgba(0,0,0,.04), 0 2px rgba(255,255,255,.65)
+
+  .seeker-fill
+    position: relative
+    overflow: hidden
+    height: 100%
+    width: 72%
+    border: 2px solid #ab1409
+    border-radius: 10px
+    +gradient(#d21007, #a50c05)
+    box-shadow: inset 0 1px 3px rgba(255,255,255, .3), inset 0 -1px 3px rgba(0,0,0,.2)
+
+    &:after
+      position: absolute
+      content: ''
+      width: 100%
+      height: 100%
+      bottom: 50%
+      background: rgba(255,255,255,.15)
+      border-radius: 10px
