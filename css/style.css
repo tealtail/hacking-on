@@ -235,7 +235,12 @@ h1, h2, h3, h4, h5, h6 {
 *, *:after, *:before {
   box-sizing: border-box; }
 
+html, body {
+  min-height: 100%; }
+
 body {
+  background: url(../images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
   font-family: sans-serif;
   line-height: 1; }
 
@@ -264,31 +269,28 @@ a {
     border-radius: 7px; }
 
 .scrobbler__min {
+  position: relative;
   width: 700px;
-  margin: 60px auto;
+  margin: 40px auto;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); }
+  .scrobbler__min:after {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    background: -webkit-radial-gradient(top center, ellipse farthest-side, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 80%);
+    top: 0;
+    left: -20%;
+    right: -20%;
+    bottom: 20%;
+    margin-top: -50%;
+    border-radius: 100%; }
 
 .scrobbler-body {
   position: relative;
   padding: 30px;
-  background: url(../images/body-bg.png) left center;
+  background: linear-gradient(rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.5) 100%), url(../images/body-bg.png) left center;
   font-size: 24px; }
-  .scrobbler-body:before {
-    content: "";
-    position: absolute;
-    display: block;
-    background-color: rgba(0, 0, 0, 0) 10%;
-    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0) 10%, black 100%);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0) 10%), to(black 100%));
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 10%, black 100%);
-    background-image: -o-linear-gradient(rgba(0, 0, 0, 0) 10%, black 100%);
-    background-image: linear-gradient(rgba(0, 0, 0, 0) 10%, black 100%);
-    bottom: 1px;
-    left: 0;
-    right: 0;
-    height: 150px;
-    opacity: 0.5; }
 
 .track-details {
   position: relative;
