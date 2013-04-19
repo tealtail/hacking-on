@@ -46,19 +46,19 @@ a
   @extend %group
   position: relative
   padding: 30px
-  background: #2a2b2b
+  background: url(../images/body-bg.png) left center
   font-size: 24px
 
   &:before
     content: ''
     position: absolute
     display: block
-    +gradient(rgba(0,0,0,0),rgba(0,0,0,1))
+    +gradient(rgba(0,0,0,0) 10%,rgba(0,0,0,1) 100%)
     bottom: 1px
     left: 0
     right: 0
     height: 150px
-    opacity: 0.5
+    opacity: .5
 
 .track-details
   position: relative
