@@ -43,6 +43,7 @@ a
 
 .scrobbler__min
   position: relative
+  overflow: hidden
   width: 700px
   margin: 40px auto
   border-radius: 10px
@@ -52,20 +53,21 @@ a
     content: ""
     position: absolute
     z-index: 2
-    background: -webkit-radial-gradient(top center, ellipse farthest-side, rgba(255,255,255,.25), rgba(255,255,255,0))
-    top: 0
+    background: -webkit-radial-gradient(top center, ellipse farthest-side, rgba(255,255,255,1), rgba(255,255,255,0))
+    top: -50%
     left: -10%
     right: -10%
-    bottom: 50%
-    margin-top: -50%
+    bottom: 60%
     border-radius: 100%
-
+    opacity: .1
+    +user-select(none)
+    pointer-events: none
 
 .scrobbler-body
   @extend %group
   position: relative
   padding: 30px
-  background: linear-gradient((rgba(0,0,0,0) 35%,rgba(0,0,0,.5) 100%)), url(../images/body-bg.png) left center
+  background: linear-gradient((rgba(0,0,0,0) 25%,rgba(0,0,0,.6) 100%)), url(../images/body-bg.png) right 70%
   font-size: 24px
 
 .track-details
