@@ -1,6 +1,11 @@
+@function black($opacity)
+  @return rgba(0,0,0,$opacity)
+
+@function white($opacity)
+  @return rgba(255,255,255,$opacity)
+
 =gradient($from, $to)
   background-color: $from
-  background-image: -moz-linear-gradient($from, $to)
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to))
   background-image: -webkit-linear-gradient($from, $to)
   background-image: -o-linear-gradient($from, $to)
@@ -11,3 +16,28 @@
   -moz-user-select:    $properties
   -ms-user-select:     $properties
   user-select:         $properties
+
+=overlay($type:'after')
+  position: relative
+
+  @if $type == after
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      pointer-events: none
+      @content
+
+  @if $type == before
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      pointer-events: none
+      @content

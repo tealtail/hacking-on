@@ -14,6 +14,7 @@
   border-radius: 10px 10px 0 0
   box-shadow: inset 0 2px rgba(255,255,255,.35), 0 6px 12px rgba(0,0,0,.5)
   z-index: 1
+
 .circles
   @extend %group
   float: left
@@ -60,7 +61,6 @@
     cursor: pointer
 
   .volume-level
-    position: absolute
     height: 100%
     width: 50px
     max-width: 100%
@@ -68,30 +68,24 @@
     border: 2px solid #000
     background: #121313
     overflow: hidden
-    +user-select(none)
     cursor: pointer
 
-    &:before
-      content: ''
-      display: block
-      position: absolute
+    +overlay(before)
+      top: auto
       bottom: 50%
       height: 100%
-      width: 100%
       border-radius: 10px
       background: #2a2b2b
 
   .volume-handle
     position: absolute
-    display: block
-    +user-select(none)
-    cursor: pointer
     top: 0
     left: 50px
+    +user-select(none)
+    cursor: pointer
     +slider-handle(28px)
     margin-top: -3px
     background: url('../images/knob.png') no-repeat
-    z-index: 5
 
 .logo
   position: absolute

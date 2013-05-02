@@ -25,49 +25,33 @@ a
     clear: both
 
 .album-art
-  position: relative
   height: 200px
   width: 200px
   float: left
-
-  &:after
-    position: absolute
-    content: ''
-    display: block
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    box-shadow: inset 0 2px rgba(255,255,255,.75), 0 4px 10px #000
+  +overlay
+    box-shadow: inset 0 2px white(.75), 0 4px 10px #000
     border-radius: 7px
 
 .scrobbler__min
-  position: relative
   overflow: hidden
   width: 700px
   margin: 40px auto
   border-radius: 10px
-  box-shadow: 0 10px 30px rgba(0,0,0,.25)
-
-  &:after
-    content: ""
-    position: absolute
-    z-index: 2
-    background: -webkit-radial-gradient(top center, ellipse farthest-side, rgba(255,255,255,1), rgba(255,255,255,0))
+  box-shadow: 0 10px 30px black(.25)
+  +overlay
+    background: -webkit-radial-gradient(top center, ellipse farthest-side, #fff, white(0))
     top: -50%
     left: -10%
     right: -10%
     bottom: 60%
     border-radius: 100%
-    opacity: .1
-    +user-select(none)
-    pointer-events: none
+    opacity: .25
 
 .scrobbler-body
   @extend %group
   position: relative
   padding: 30px
-  background: linear-gradient((rgba(0,0,0,0) 25%,rgba(0,0,0,.6) 100%)), url(../images/body-bg.png) right 70%
+  background: linear-gradient((black(0) 25%, black(.6) 100%)), url(../images/body-bg.png) right 70%
   font-size: 24px
 
 .track-details
@@ -75,7 +59,7 @@ a
   float: left
   margin-left: 35px
   color: #a2a7b0
-  text-shadow: 0 2px 3px rgba(0,0,0,.75)
+  text-shadow: 0 2px 3px black(.75)
 
 .track-title,.track-artist a, .album-title,.album-release
   color: white
