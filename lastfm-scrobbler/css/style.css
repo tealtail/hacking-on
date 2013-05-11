@@ -162,6 +162,10 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../images/logo-min.png") top center no-repeat; }
 
 .scrobbler-control {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
   height: 80px;
   padding: 30px 20px;
   background: linear-gradient(white, rgba(255, 255, 255, 0)), url("../images/control-bg.png");
@@ -232,6 +236,99 @@ h1, h2, h3, h4, h5, h6 {
       background: rgba(255, 255, 255, 0.15);
       border-radius: 10px; }
 
+.expandable-list li > a:before {
+  display: inline-block;
+  content: "";
+  vertical-align: 3px;
+  margin-right: 15px;
+  border-style: solid;
+  border-width: 5px 0 5px 9px;
+  border-color: transparent transparent transparent #73767c; }
+
+.scrobbler-sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 320px;
+  background: white;
+  box-shadow: inset 0 1px #292a2a;
+  padding: 30px 0; }
+  .scrobbler__min .scrobbler-sidebar {
+    display: none; }
+  .scrobbler-sidebar h3 {
+    color: #373a41;
+    font-weight: normal;
+    font-size: 24px;
+    margin: 0 0 15px 40px; }
+  .scrobbler-sidebar ul {
+    margin-bottom: 30px; }
+  .scrobbler-sidebar li > a {
+    display: inline-block;
+    padding-left: 40px;
+    vertical-align: middle;
+    font-weight: 300;
+    line-height: 40px;
+    color: #73767c; }
+  .scrobbler-sidebar .active {
+    background: #ededed;
+    position: relative; }
+    .scrobbler-sidebar .active:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      pointer-events: none;
+      background-color: #373a41;
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#373a41), to(#1c1e21));
+      background-image: -webkit-linear-gradient(#373a41, #1c1e21);
+      background-image: -o-linear-gradient(#373a41, #1c1e21);
+      background-image: linear-gradient(#373a41, #1c1e21);
+      height: 100%;
+      width: 10px; }
+    .scrobbler-sidebar .active > a {
+      font-weight: normal;
+      color: #373a41; }
+  .scrobbler-sidebar .user {
+    padding: 0 0 30px 30px; }
+    .scrobbler-sidebar .user .user-name {
+      color: #d51007;
+      font-size: 26px;
+      font-weight: bold;
+      line-height: 80px; }
+
+.gravatar {
+  height: 80px;
+  width: 80px;
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 4px #373a41, 0 4px rgba(0, 0, 0, 0.15);
+  border-radius: 50%; }
+  .gravatar img {
+    position: relative;
+    top: -12px;
+    left: -7px;
+    right: 0;
+    z-index: -1; }
+
+.scrobbler__max {
+  width: 1300px; }
+  .scrobbler__max .scrobbler-body {
+    height: 800px; }
+  .scrobbler__max .track-content {
+    margin-left: 320px; }
+  .scrobbler__max .scrobbler-control {
+    left: 321px;
+    border-bottom-left-radius: 0;
+    box-shadow: -1px 0 #a2a7b0; }
+  .scrobbler__max .seeker {
+    width: 699px; }
+
 *, *:after, *:before {
   box-sizing: border-box; }
 
@@ -247,7 +344,7 @@ body {
 a {
   text-decoration: none; }
 
-.circles:after, .scrobbler-control:after, .scrobbler-body:after {
+.circles:after, .scrobbler-control:after, .scrobbler-sidebar .user:after, .scrobbler-body:after {
   content: "";
   display: table;
   clear: both; }
@@ -269,13 +366,15 @@ a {
     border-radius: 7px; }
 
 .scrobbler__min {
+  width: 700px; }
+
+.scrobbler {
   overflow: hidden;
-  width: 700px;
   margin: 40px auto;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   position: relative; }
-  .scrobbler__min:after {
+  .scrobbler:after {
     content: "";
     position: absolute;
     top: 0;
@@ -289,11 +388,12 @@ a {
     right: -10%;
     bottom: 60%;
     border-radius: 100%;
-    opacity: 0.25; }
+    opacity: 0.35; }
 
 .scrobbler-body {
   position: relative;
   padding: 30px;
+  padding-bottom: 110px;
   background: linear-gradient(rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.6) 100%), url(../images/body-bg.png) right 70%;
   font-size: 24px; }
 
@@ -309,11 +409,10 @@ a {
 
 .track-title {
   font-size: 32px;
-  font-weight: bold;
   margin: 5px 0 16px; }
   .track-title time {
     color: #a2a7b0;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 26px; }
     .track-title time:before {
       content: "- "; }
@@ -322,9 +421,11 @@ a {
   position: relative;
   display: block;
   line-height: 30px;
+  font-size: 26px;
   font-weight: bold;
-  font-size: 22px;
   text-decoration: none; }
+  .track-artist a {
+    font-weight: normal; }
   .track-artist:after {
     content: "";
     position: absolute;
@@ -336,5 +437,4 @@ a {
 
 .album-title {
   margin: 40px 0 20px;
-  font-size: 30px;
-  font-weight: bold; }
+  font-size: 30px; }

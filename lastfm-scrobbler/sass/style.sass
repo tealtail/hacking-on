@@ -2,6 +2,8 @@
 @import 'mixins'
 @import 'modules/scrobbler-header'
 @import 'modules/scrobbler-control'
+@import 'modules/scrobbler-sidebar'
+@import 'modules/scrobbler__max'
 
 *, *:after, *:before
   box-sizing: border-box
@@ -33,11 +35,14 @@ a
     border-radius: 7px
 
 .scrobbler__min
-  overflow: hidden
   width: 700px
+
+.scrobbler
+  overflow: hidden
   margin: 40px auto
   border-radius: 10px
   box-shadow: 0 10px 30px black(.25)
+
   +overlay
     background: -webkit-radial-gradient(top center, ellipse farthest-side, #fff, white(0))
     top: -50%
@@ -45,12 +50,13 @@ a
     right: -10%
     bottom: 60%
     border-radius: 100%
-    opacity: .25
+    opacity: .35
 
 .scrobbler-body
   @extend %group
   position: relative
   padding: 30px
+  padding-bottom: 110px
   background: linear-gradient((black(0) 25%, black(.6) 100%)), url(../images/body-bg.png) right 70%
   font-size: 24px
 
@@ -66,12 +72,11 @@ a
 
 .track-title
   font-size: 32px
-  font-weight: bold
   margin: 5px 0 16px
 
   time
     color: #a2a7b0
-    font-weight: normal
+    font-weight: 300
     font-size: 26px
 
     &:before
@@ -81,9 +86,11 @@ a
   position: relative
   display: block
   line-height: 30px
+  font-size: 26px
   font-weight: bold
-  font-size: 22px
   text-decoration: none
+  a
+    font-weight: normal
 
   &:after
     content: ''
@@ -97,4 +104,6 @@ a
 .album-title
   margin: 40px 0 20px
   font-size: 30px
-  font-weight: bold
+
+
+

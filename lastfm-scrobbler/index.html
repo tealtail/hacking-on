@@ -6,20 +6,16 @@
   <meta name=viewport content="width=device-width, initial-scale=1">
   <title>Last.fm Scrobbler</title>
   <link rel=stylesheet href="css/style.css">
-
 </head>
 <body>
-
-  <div class="scrobbler__min">
+  <div class="scrobbler scrobbler__max">
     <header class="scrobbler-header">
       <ul class="circles">
         <li class="circles-close"></li>
         <li class="circles-minimize"></li>
         <li class="circles-maximize"></li>
       </ul>
-
       <div class="logo"></div>
-
       <div class="volume">
         <div class="volume-track">
           <div class="volume-level">
@@ -30,28 +26,63 @@
       </div>
     </header>
     <section class="scrobbler-body">
-      <figure class="album-art"><img src="images/albumart.png"/></figure>
+     <aside class="scrobbler-sidebar">
+       <div class="user">
+         <div class="gravatar">
+           <img src="images/gravatar.jpg" />
+         </div>
+         <h2 class="user-name">Oisín Lavery</h2>
+       </div>
+       <ul>
+        <li><a href="#">Start a Station</a></li>
+        <li class="active"><a href="#">Now Playing</a></li>
+      </ul>
+      <h3>My Stations</h3>
+      <ul>
+        <li><a href="#">My Radio Station</a></li>
+        <li><a href="#">My Mix Radio</a></li>
+        <li><a href="#">My Recommendations</a></li>
+      </ul>
+      <h3>My Profile</h3>
+      <ul class="expandable-list">
+        <li><a href="#">Recently Played</a></li>
+        <li><a href="#">Recently Loved</a></li>
+        <li><a href="#">Recently Banned</a></li>
+        <li><a href="#">My Tags</a></li>
+        <li><a href="#">Friends</a></li>
+        <li><a href="#">Neighbors</a></li>
+        <li><a href="#">History</a></li>
+      </ul>
+    </aside>
+    <article class="track-content">
+      <figure class="album-art">
+        <img src="images/albumart.png"/>
+      </figure>
       <div class="track-details">
-        <h1 class="track-title">Hurts Like Heaven  <time>4:02</time></h1>
-        <span class="track-artist">by <a href="#">Coldplay</a></span>
-
+        <h2 class="track-title">Hurts Like Heaven
+          <time>4:02</time>
+        </h2>
+        <span class="track-artist">by
+          <a href="#">Coldplay</a>
+        </span>
         <h2 class="album-title">Mylo Xyloto</h2>
         released <span class="album-release">Feb 2012</span> ℗ <b>EMI</b>
       </div>
-    </section>
-    <section class="scrobbler-control">
-        <div class="control-play"></div>
-        <div class="control-skip"></div>
-      <div class="seeker">
-        <div class="seeker-track">
-          <div class="seeker-fill"></div>
-        </div>
+    </article>
+  </section>
+  <section class="scrobbler-control">
+    <div class="control-play"></div>
+    <div class="control-skip"></div>
+    <div class="seeker">
+      <div class="seeker-track">
+        <div class="seeker-fill"></div>
       </div>
-      <div class="control-love"></div>
-      <div class="control-nolove"></div>
-    </section>
-  </div>
-  <script src="components/jquery/jquery.min.js"></script>
-  <script src="js/main.js"></script>
+    </div>
+    <div class="control-love"></div>
+    <div class="control-nolove"></div>
+  </section>
+</div>
+<script src="components/jquery/jquery.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
