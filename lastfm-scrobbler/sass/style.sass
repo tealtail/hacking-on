@@ -20,6 +20,11 @@ body
 a
   text-decoration: none
 
+h2
+  font-size: 32px
+  margin: 5px 0 15px
+  color: white
+
 %group
   &:after
     content: ''
@@ -70,9 +75,11 @@ a
     .mask
       opacity: 1
 
-
 .scrobbler__min
   width: 700px
+
+  .scrobbler-sidebar, .band-bio
+    display: none
 
 .scrobbler
   overflow: hidden
@@ -97,6 +104,9 @@ a
   background: linear-gradient((black(0) 25%, black(.6) 100%)), url(../images/body-bg.png) right 70%
   font-size: 24px
 
+.track-content
+  @extend %group
+
 .track-details
   position: relative
   float: left
@@ -104,25 +114,21 @@ a
   color: #a2a7b0
   text-shadow: 0 2px 3px black(.75)
 
-.track-title,.track-artist a, .album-title,.album-release
+.track-artist a, .album-title,.album-release
   color: white
 
-.track-title
-  font-size: 32px
-  margin: 5px 0 16px
+.track-title time
+  color: #a2a7b0
+  font-weight: 300
+  font-size: 26px
 
-  time
-    color: #a2a7b0
-    font-weight: 300
-    font-size: 26px
-
-    &:before
-      content: '- '
+  &:before
+    content: '- '
 
 .track-artist
   position: relative
   display: block
-  line-height: 30px
+  line-height: 1.2
   font-size: 26px
   font-weight: bold
   text-decoration: none
@@ -140,7 +146,21 @@ a
 
 .album-title
   margin: 40px 0 20px
-  font-size: 30px
+
+.band-bio
+  margin-top: 45px
+  color: #a2a7b0
+
+  header
+    font-size: 26px
+
+    h2
+      margin-bottom: 15px
+
+  p
+    margin-top: 55px
+    line-height: 42px
+    font-weight: 300
 
 
 

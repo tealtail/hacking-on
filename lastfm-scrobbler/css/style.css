@@ -255,15 +255,13 @@ h1, h2, h3, h4, h5, h6 {
   background: white;
   box-shadow: inset 0 1px #292a2a;
   padding: 30px 0; }
-  .scrobbler__min .scrobbler-sidebar {
-    display: none; }
   .scrobbler-sidebar h3 {
     color: #373a41;
     font-weight: normal;
     font-size: 24px;
     margin: 0 0 15px 40px; }
   .scrobbler-sidebar ul {
-    margin-bottom: 30px; }
+    margin-bottom: 28px; }
   .scrobbler-sidebar li > a {
     display: inline-block;
     padding-left: 40px;
@@ -293,7 +291,7 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: normal;
       color: #373a41; }
   .scrobbler-sidebar .user {
-    padding: 0 0 30px 30px; }
+    padding: 0 0 5px 30px; }
     .scrobbler-sidebar .user .user-name {
       color: #d51007;
       font-size: 26px;
@@ -320,7 +318,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 1300px; }
   .scrobbler__max .scrobbler-body {
     height: 800px; }
-  .scrobbler__max .track-content {
+  .scrobbler__max .main {
     margin-left: 320px; }
   .scrobbler__max .scrobbler-control {
     left: 321px;
@@ -344,7 +342,12 @@ body {
 a {
   text-decoration: none; }
 
-.circles:after, .scrobbler-control:after, .scrobbler-sidebar .user:after, .scrobbler-body:after {
+h2 {
+  font-size: 32px;
+  margin: 5px 0 15px;
+  color: white; }
+
+.circles:after, .scrobbler-control:after, .scrobbler-sidebar .user:after, .scrobbler-body:after, .track-content:after {
   content: "";
   display: table;
   clear: both; }
@@ -396,6 +399,8 @@ a {
 
 .scrobbler__min {
   width: 700px; }
+  .scrobbler__min .scrobbler-sidebar, .scrobbler__min .band-bio {
+    display: none; }
 
 .scrobbler {
   overflow: hidden;
@@ -433,23 +438,20 @@ a {
   color: #a2a7b0;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.75); }
 
-.track-title, .track-artist a, .album-title, .album-release {
+.track-artist a, .album-title, .album-release {
   color: white; }
 
-.track-title {
-  font-size: 32px;
-  margin: 5px 0 16px; }
-  .track-title time {
-    color: #a2a7b0;
-    font-weight: 300;
-    font-size: 26px; }
-    .track-title time:before {
-      content: "- "; }
+.track-title time {
+  color: #a2a7b0;
+  font-weight: 300;
+  font-size: 26px; }
+  .track-title time:before {
+    content: "- "; }
 
 .track-artist {
   position: relative;
   display: block;
-  line-height: 30px;
+  line-height: 1.2;
   font-size: 26px;
   font-weight: bold;
   text-decoration: none; }
@@ -465,5 +467,16 @@ a {
     height: 29px; }
 
 .album-title {
-  margin: 40px 0 20px;
-  font-size: 30px; }
+  margin: 40px 0 20px; }
+
+.band-bio {
+  margin-top: 45px;
+  color: #a2a7b0; }
+  .band-bio header {
+    font-size: 26px; }
+    .band-bio header h2 {
+      margin-bottom: 15px; }
+  .band-bio p {
+    margin-top: 55px;
+    line-height: 42px;
+    font-weight: 300; }
