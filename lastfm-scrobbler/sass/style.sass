@@ -30,9 +30,46 @@ a
   height: 200px
   width: 200px
   float: left
+  overflow: hidden
+  box-shadow: 0 4px 10px #000
+  border-radius: 7px
+
   +overlay
-    box-shadow: inset 0 2px white(.75), 0 4px 10px #000
-    border-radius: 7px
+    box-shadow: inset 0 2px white(.75)
+
+  .mask
+    position: absolute
+    opacity: 0
+    background: black(.85)
+    overflow: hidden
+    left: 0
+    right: 0
+    height: 50px
+    bottom: 10px
+    box-shadow: inset 0 0 0 2px #000
+    transition: all 0.4s ease-in-out
+
+    li
+      float: left
+
+      > a
+        background-repeat: no-repeat
+        margin: 15px 0 0 30px
+        display: inline-block
+        height: 30px
+        width: 30px
+
+        &.tags
+          background-image: url('../images/tags.png')
+        &.tones
+          background-image: url('../images/tones.png')
+        &.comments
+          background-image: url('../images/bubble.png')
+
+  &:hover
+    .mask
+      opacity: 1
+
 
 .scrobbler__min
   width: 700px
