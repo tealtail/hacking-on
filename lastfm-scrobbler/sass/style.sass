@@ -88,21 +88,30 @@ h2
   box-shadow: 0 10px 30px black(.25)
 
   +overlay
-    background: -webkit-radial-gradient(top center, ellipse farthest-side, #fff, white(0))
-    top: -50%
-    left: -10%
-    right: -10%
-    bottom: 60%
-    border-radius: 100%
-    opacity: .35
+    z-index: 1
+    background: white(.3)
+    -webkit-mask-image: -webkit-radial-gradient(top center, ellipse farthest-side, black(1), black(0))
+    height: 350px
+    top: -200px
+    border-radius: 50%
 
 .scrobbler-body
   @extend %group
   position: relative
-  padding: 30px
+  padding: 30px 0
   padding-bottom: 110px
-  background: linear-gradient((black(0) 25%, black(.6) 100%)), url(../images/body-bg.png) right 70%
+  background: linear-gradient((black(0) 30%, black(.75) 100%)), url(../images/body-bg.png) right 70%
   font-size: 24px
+
+.main
+  padding: 0 35px
+
+  +overlay
+    height: 120px
+    top: auto
+    background: #000
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black(0)), to(black(.95)))
+
 
 .track-content
   @extend %group
@@ -114,7 +123,7 @@ h2
   color: #a2a7b0
   text-shadow: 0 2px 3px black(.75)
 
-.track-artist a, .album-title,.album-release
+.track-artist a, .album-release
   color: white
 
 .track-title time
@@ -156,11 +165,14 @@ h2
 
     h2
       margin-bottom: 15px
-
   p
-    margin-top: 55px
+    margin: 40px 0 10px
     line-height: 42px
     font-weight: 300
 
+    b
+      letter-spacing: 1px
+      font-weight: normal
+      color: white
 
 
